@@ -10,15 +10,13 @@ class Usuario
     private $nombre;
     private $username;
     private $password;
-    private $pp;
+    
 
-    public function __construct($id, $nombre, $username, $password, $pp){
+    public function __construct($id, $nombre, $username, $password){
         $this->id = $id;
         $this->nombre = $nombre;
         $this->username = $username;
         $this->password = $password;
-        $this->pp = $pp;
-
     }
     
 
@@ -63,16 +61,6 @@ class Usuario
         return $this->password;
     }
 
-    public function setPp($pp)
-    {
-        $this->pp = $pp;
-        return $this;
-    }
-
-    public function getPp()
-    {
-        return $this->pp;
-    }
 
         
     public function toArray() {
