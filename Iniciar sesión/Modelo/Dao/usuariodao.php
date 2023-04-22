@@ -25,7 +25,6 @@ class UsuarioDAO {
                         $data_table[$indice]["nombre"],
                         $data_table[$indice]["username"],
                         $data_table[$indice]["password"],
-                        $data_table[$indice]["pp"]
                         );
             }
             return $usuario;
@@ -47,7 +46,7 @@ class UsuarioDAO {
                     $data_table[$indice]["nombre"],
                     $data_table[$indice]["username"],
                     $data_table[$indice]["password"],
-                    $data_table[$indice]["pp"]
+                
                     );
             }
             return $usuario;
@@ -68,7 +67,7 @@ class UsuarioDAO {
                 $data_table[$indice]["nombre"],
                 $data_table[$indice]["username"],
                 $data_table[$indice]["password"],
-                $data_table[$indice]["pp"]
+             
                 );
                 array_push($usuarios,$usuario);
         }
@@ -91,12 +90,11 @@ class UsuarioDAO {
     public function modificarUsuario(Usuario $usuario){
         $data_source= new DataSource();
         
-        $sql ="UPDATE usuario SET nombre = :nombre, username = :username, password = :password, pp=:pp WHERE id = :id"; 
+        $sql ="UPDATE usuario SET nombre = :nombre, username = :username, password = :password, WHERE id = :id"; 
         $resultado = $data_source->ejecutarActualizacion($sql, array(
                 ':nombre'=>$usuario->getNombre(),
                 ':username'=>$usuario->getUsername(),
                 ':password'=>$usuario->getPassword(),
-                ':pp'=>$usuario->getPp(),
                 ':id'=>$usuario->getId()
             )
         );
